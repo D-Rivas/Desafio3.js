@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores por teclas</title>
+</head>
+
+<body>
+
+    <body>
+        <h2>Presiona las teclas A, S, D, Q, W o E</h2>
+        <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black;"></div>
+
+        <script>
+            let color = ""; // Variable global para guardar el color
+
+            document.addEventListener('keydown', function (event) {
+                const keyDiv = document.getElementById("key");
+
+                if (event.key === 'a') {
+                    color = "pink";
+                    keyDiv.style.backgroundColor = color;
+                } else if (event.key === 's') {
+                    color = "orange";
+                    keyDiv.style.backgroundColor = color;
+                } else if (event.key === 'd') {
+                    color = "skyblue";
+                    keyDiv.style.backgroundColor = color;
+                }
+
+                // Crear nuevos divs con colores al presionar q, w o e
+                else if (event.key === 'q') {
+                    crearDiv("purple");
+                } else if (event.key === 'w') {
+                    crearDiv("gray");
+                } else if (event.key === 'e') {
+                    crearDiv("brown");
+                }
+            });
+
+            function crearDiv(color) {
+                const newDiv = document.createElement("div");
+                newDiv.style.width = "200px";
+                newDiv.style.height = "200px";
+                newDiv.style.marginTop = "10px";
+                newDiv.style.backgroundColor = color;
+                newDiv.style.border = "1px solid black";
+                document.body.appendChild(newDiv);
+            }
+        </script>
+    </body>
+
+</html>
